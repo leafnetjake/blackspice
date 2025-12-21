@@ -9,35 +9,6 @@ endif
 " Prefer palette exported by colorscheme (hex + cterm index)
 let s:pal = exists('g:blackspice_palette') ? g:blackspice_palette : {}
 
-" " Fallback: minimal palette (keep in sync with colors/blackspice.vim if needed)
-" if empty(s:pal)
-"   let s:is_light = (&background ==# 'light')
-"   let s:pal = {
-"   \ 'bg'              : ['#132123', 233],
-"   \ 'surface'         : ['#232d38', 235],
-"   \ 'surface2'        : ['#313f4e', 237],
-"   \ 'border'          : ['#415367', 239],
-"   \ 'line'            : ['#536984', 240],
-"   \ 'muted'           : ['#627d9d', 241],
-"   \ 'fg_dim'          : ['#c6b8ad', 251],
-"   \ 'fg'              : ['#e5ded6', 253],
-"   \ 'accent.error'    : ['#d32c5d', 204],
-"   \ 'accent.warn'     : ['#dc7759', 209],
-"   \ 'accent.yellow'   : ['#dcb659', 221],
-"   \ 'accent.green'   : ['#7fdc59', 120],
-"   \ 'accent.info'    : ['#59dcd8', 86],
-"   \ 'accent.purple'   : ['#b759dc', 171]
-"   \ }
-"   if s:is_light
-"     let s:pal['fg_dim']        = s:pal['surface']
-"     let s:pal['fg']            = s:pal['bg']
-"     let s:pal['bg']            = ['#f6fbd6', 230]
-"     let s:pal['surface']       = ['#c7c7ba', 187]
-"     let s:pal['surface2']      = ['#aaaa97', 144]
-"     let s:pal['accent.yellow'] = ['#A58023', 136]
-"   endif
-" endif
-
 " Hex colors for lightline (lightline uses gui colors here)
 let s:bg       = s:pal['bg'][0]
 let s:surface  = s:pal['surface'][0]
@@ -63,12 +34,12 @@ let s:p.inactive.left   = [ [ s:fg_dim, s:surface ], [ s:muted, s:surface ] ]
 let s:p.inactive.middle = [ [ s:muted,  s:surface ] ]
 let s:p.inactive.right  = [ [ s:muted,  s:surface ], [ s:fg_dim, s:surface ] ]
 
-" Normal mode (info accent)
+" Normal mode (green accent)
 let s:p.normal.left   = [ [ s:bg, s:green, 'bold' ], [ s:fg_dim, s:surface2, 'bold' ] ]
 let s:p.normal.middle = [ [ s:muted, s:surface ] ]
 let s:p.normal.right  = [ [ s:bg, s:green ], [ s:fg_dim, s:surface2 ] ]
 
-" Insert mode (green accent)
+" Insert mode (primary accent)
 let s:p.insert.left   = [ [ s:bg, s:primary, 'bold' ], [ s:fg_dim, s:surface2, 'bold' ] ]
 let s:p.insert.middle = s:p.normal.middle
 let s:p.insert.right  = [ [ s:bg, s:primary ], [ s:fg_dim, s:surface2 ] ]
@@ -78,10 +49,10 @@ let s:p.replace.left   = [ [ s:bg, s:err, 'bold' ], [ s:fg_dim, s:surface2, 'bol
 let s:p.replace.middle = s:p.normal.middle
 let s:p.replace.right  = [ [ s:bg, s:err ], [ s:fg_dim, s:surface2 ] ]
 
-" Visual mode (purple accent)
-let s:p.visual.left   = [ [ s:bg, s:purple, 'bold' ], [ s:fg_dim, s:surface2, 'bold' ] ]
+" Visual mode (orange accent)
+let s:p.visual.left   = [ [ s:bg, s:orange, 'bold' ], [ s:fg_dim, s:surface2, 'bold' ] ]
 let s:p.visual.middle = s:p.normal.middle
-let s:p.visual.right  = [ [ s:bg, s:purple ], [ s:fg_dim, s:surface2 ] ]
+let s:p.visual.right  = [ [ s:bg, s:orange ], [ s:fg_dim, s:surface2 ] ]
 
 " Terminal mode (warn/yellow accent)
 let s:p.terminal.left   = [ [ s:bg, s:yellow, 'bold' ], [ s:fg_dim, s:surface2, 'bold' ] ]
