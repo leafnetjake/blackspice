@@ -23,8 +23,9 @@ let s:err      = s:pal['accent.error'][0]
 let s:warn     = s:pal['accent.warn'][0]
 let s:yellow   = s:pal['accent.yellow'][0]
 let s:green    = s:pal['accent.green'][0]
-let s:primary   = s:pal['accent.primary'][0]
+let s:primary  = s:pal['accent.primary'][0]
 let s:info     = s:pal['accent.info'][0]
+let s:orange   = s:pal['accent.orange'][0]
 let s:purple   = s:pal['accent.purple'][0]
 
 let s:p = {'normal':{}, 'inactive':{}, 'insert':{}, 'replace':{}, 'visual':{}, 'tabline':{}, 'terminal':{}}
