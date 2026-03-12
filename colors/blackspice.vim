@@ -232,69 +232,6 @@ call s:Link('StatusLineTermNC', 'StatusLineNC')
 call s:Link('Terminal',         'Normal')
 
 " ---------------------------------------------------------------------------
-" Plugin: ALE
-" ---------------------------------------------------------------------------
-call s:Link('ALEVirtualTextError',   'DiagnosticError')
-call s:Link('ALEVirtualTextWarning', 'DiagnosticWarn')
-
-" ---------------------------------------------------------------------------
-" Plugin: buftabline
-" ---------------------------------------------------------------------------
-call s:Link('BufTabLineCurrent', 'Pmenu')
-call s:Link('BufTabLineActive',  'PmenuSel')
-
-" ---------------------------------------------------------------------------
-" Plugin: Signify (define directly so you don’t need an extra 'Signify' group)
-" ---------------------------------------------------------------------------
-call s:Hi('SignifySignAdd',    {'fg':'accent.green', 'bg':'bg'})
-call s:Hi('SignifySignChange', {'fg':'accent.yellow', 'bg':'bg'})
-call s:Hi('SignifySignDelete', {'fg':'accent.error', 'bg':'bg'})
-
-" ---------------------------------------------------------------------------
-" Plugin: coc.nvim (map to semantic groups + proper undercurl color)
-" ---------------------------------------------------------------------------
-call s:Link('CocErrorSign',        'ErrorMsg')
-call s:Link('CocWarningSign',      'WarningMsg')
-call s:Link('CocInfoSign',         'InfoMsg')
-call s:Link('CocHintSign',         'HintMsg')
-
-call s:Link('CocErrorFloat',       'ErrorMsg')
-call s:Link('CocWarningFloat',     'WarningMsg')
-call s:Link('CocInfoFloat',        'InfoMsg')
-call s:Link('CocHintFloat',        'HintMsg')
-
-call s:Link('CocDiagnosticsError', 'DiagnosticError')
-call s:Link('CocDiagnosticsWarning','DiagnosticWarn')
-call s:Link('CocDiagnosticsInfo',  'DiagnosticInfo')
-call s:Link('CocDiagnosticsHint',  'DiagnosticHint')
-
-call s:Hi('CocSelectedText',       {'fg':'accent.error', 'style':'bold'})
-call s:Hi('CocCodeLens',           {'fg':'border'})
-
-call s:Hi('CocErrorHighlight',     {'style':'underline,bold', 'sp':'accent.error'})
-call s:Link('CocWarningHighlight', 'CocErrorHighlight')
-call s:Link('CocInfoHighlight',    'CocErrorHighlight')
-call s:Link('CocHintHighlight',    'CocErrorHighlight')
-
-" ---------------------------------------------------------------------------
-" Neovim LSP (older group names still seen in configs)
-" ---------------------------------------------------------------------------
-call s:Link('LspDiagnosticsDefaultError',       'DiagnosticError')
-call s:Link('LspDiagnosticsDefaultWarning',     'DiagnosticWarn')
-call s:Link('LspDiagnosticsDefaultInformation', 'DiagnosticInfo')
-call s:Link('LspDiagnosticsDefaultHint',        'DiagnosticHint')
-
-call s:Link('LspDiagnosticsError',       'LspDiagnosticsDefaultError')
-call s:Link('LspDiagnosticsWarning',     'LspDiagnosticsDefaultWarning')
-call s:Link('LspDiagnosticsInformation', 'LspDiagnosticsDefaultInformation')
-call s:Link('LspDiagnosticsHint',        'LspDiagnosticsDefaultHint')
-
-call s:Link('LspDiagnosticsSignError',       'ErrorMsgInverse')
-call s:Link('LspDiagnosticsSignWarning',     'WarningMsgInverse')
-call s:Link('LspDiagnosticsSignInformation', 'InfoMsgInverse')
-call s:Link('LspDiagnosticsSignHint',        'HintMsgInverse')
-
-" ---------------------------------------------------------------------------
 " Filetype: C
 " ---------------------------------------------------------------------------
 call s:Link('cInclude',   'PreProc')
@@ -499,5 +436,22 @@ call s:Link('jsxAttribKeyword', 'Identifier')
 call s:Link('jsonQuote', 'Identifier')
 call s:Link('jsonKeyword', 'Identifier')
 call s:Link('jsonNoise', 'Identifier')
+
+" ---------------------------------------------------------------------------
+" Plugin: Telescope
+" ---------------------------------------------------------------------------
+call s:Hi('TelescopeNormal',         {'fg':'fg',      'bg':'surface'})
+call s:Hi('TelescopeBorder',         {'fg':'border',  'bg':'surface'})
+call s:Hi('TelescopePromptNormal',   {'fg':'fg',      'bg':'surface2'})
+call s:Hi('TelescopePromptBorder',   {'fg':'surface2','bg':'surface2'})
+call s:Hi('TelescopePromptTitle',    {'fg':'bg',      'bg':'accent.primary', 'style':'bold'})
+call s:Hi('TelescopePreviewTitle',   {'fg':'bg',      'bg':'accent.hint'})
+call s:Hi('TelescopeResultsTitle',   {'fg':'muted',   'bg':'surface'})
+call s:Hi('TelescopePromptPrefix',   {'fg':'accent.primary'})
+call s:Hi('TelescopePromptCounter',  {'fg':'muted'})
+call s:Hi('TelescopeSelection',      {'fg':'fg',      'bg':'surface2', 'style':'bold'})
+call s:Hi('TelescopeSelectionCaret', {'fg':'accent.primary', 'bg':'surface2'})
+call s:Hi('TelescopeMultiSelection', {'fg':'accent.yellow'})
+call s:Hi('TelescopeMatching',       {'fg':'accent.yellow', 'style':'bold'})
 
 let g:blackspice_palette = copy(s:p)
