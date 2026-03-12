@@ -46,8 +46,6 @@ if s:is_light
   let s:p['surface2']         = ['#aaaa97', 144]
   let s:p['accent.info']      = ['#289cbc', 38]
   let s:p['accent.yellow']    = ['#A58023', 136]
-  let s:p['accent.green']     = s:p['accent.green']
-  let s:p['accent.info'] = s:p['accent.info']
 endif
 
 " Terminal palette mapping (Neovim + Vim)
@@ -114,7 +112,7 @@ call s:Hi('Cursor',      {'fg':'fg_dim', 'style':'reverse'})
 call s:Hi('CursorLine',  {'bg':'surface'})
 call s:Hi('CursorColumn',{'bg':'surface'})
 call s:Hi('LineNr',      {'fg':'surface', 'bg':'bg'})
-call s:Hi('CursorLineNr',{'fg':'accent.hint','bg':'surface2','style':'bold'})
+call s:Hi('CursorLineNr',{'fg':'accent.hint','bg':'fg_dmin','style':'bold'})
 call s:Hi('SignColumn',  {'bg':'bg'})
 call s:Hi('ColorColumn', {'bg':'surface'})
 call s:Hi('Visual',      {'style':'reverse'})
@@ -281,11 +279,6 @@ call s:Link('CocHintHighlight',    'CocErrorHighlight')
 " ---------------------------------------------------------------------------
 " Neovim LSP (older group names still seen in configs)
 " ---------------------------------------------------------------------------
-call s:Link('DiagnosticError', 'DiagnosticError')
-call s:Link('DiagnosticWarn',  'DiagnosticWarn')
-call s:Link('DiagnosticInfo',  'DiagnosticInfo')
-call s:Link('DiagnosticHint',  'DiagnosticHint')
-
 call s:Link('LspDiagnosticsDefaultError',       'DiagnosticError')
 call s:Link('LspDiagnosticsDefaultWarning',     'DiagnosticWarn')
 call s:Link('LspDiagnosticsDefaultInformation', 'DiagnosticInfo')
@@ -506,58 +499,5 @@ call s:Link('jsxAttribKeyword', 'Identifier')
 call s:Link('jsonQuote', 'Identifier')
 call s:Link('jsonKeyword', 'Identifier')
 call s:Link('jsonNoise', 'Identifier')
-
-" ---------------------------------------------------------------------------
-" Treesitter legacy (TS*) – expanded mapping + a couple of direct defs
-" ---------------------------------------------------------------------------
-" call s:Link('TSBoolean',              'Boolean')
-" call s:Link('TSCharacter',            'Character')
-" call s:Link('TSComment',              'Comment')
-" call s:Link('TSConditional',          'Keyword')
-" call s:Link('TSConstant',             'Constant')
-" call s:Link('TSConstBuiltin',         'PreProc')
-" call s:Link('TSConstMacro',           'PreProc')
-" call s:Link('TSConstructor',          'Type')
-" call s:Link('TSError',                'Error')
-" call s:Link('TSException',            'Keyword')
-" call s:Link('TSField',                'Identifier')
-" call s:Link('TSFloat',                'Float')
-" call s:Link('TSFunction',             'Function')
-" call s:Link('TSFuncBuiltin',          'Function')
-" call s:Link('TSFuncMacro',            'PreProc')
-" call s:Link('TSInclude',              'PreProc')
-" call s:Link('TSKeyword',              'Keyword')
-" call s:Link('TSKeywordOperator',      'Keyword')
-" call s:Link('TSLabel',                'Label')
-" call s:Link('TSMethod',               'Function')
-" call s:Link('TSNamespace',            'Identifier')
-" call s:Link('TSNumber',               'Number')
-" call s:Link('TSOperator',             'Operator')
-" call s:Link('TSParameter',            'Identifier')
-" call s:Link('TSParameterReference',   'Identifier')
-" call s:Link('TSProperty',             'Identifier')
-" call s:Link('TSPunctDelimiter',       'Delimiter')
-" call s:Link('TSRepeat',               'Keyword')
-" call s:Link('TSString',               'String')
-" call s:Hi('TSStringRegex',            {'fg':'accent.hint'})     " regex tokens
-" call s:Link('TSStringEscape',         'Special')
-" call s:Link('TSSymbol',               'Constant')
-" call s:Link('TSTagDelimiter',         'Delimiter')
-" call s:Link('TSText',                 'Normal')
-" call s:Hi('TSStrong',                 {'style':'bold'})
-" call s:Hi('TSUnderline',              {'style':'underline'})
-" call s:Link('TSTitle',                'Title')
-" call s:Link('TSLiteral',              'String')
-" call s:Hi('TSURI',                    {'fg':'accent.info', 'style':'underline'})
-" call s:Link('TSMath',                 'Number')
-" call s:Link('TSTextReference',        'Comment')
-" call s:Link('TSEnvironmentName',      'PreProc')
-" call s:Link('TSNote',                 'Comment')
-" call s:Link('TSWarning',              'WarningMsg')
-" call s:Link('TSDanger',               'ErrorMsg')
-" call s:Link('TSType',                 'Type')
-" call s:Link('TSTypeBuiltin',          'Type')
-" call s:Link('TSVariable',             'Identifier')
-" call s:Link('TSVariableBuiltin',      'Special')
 
 let g:blackspice_palette = copy(s:p)
